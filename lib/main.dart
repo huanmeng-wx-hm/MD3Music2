@@ -116,7 +116,10 @@ Future<(bool, bool, bool, ThemeMode?)> runBootstrap() async {
   WidgetsFlutterBinding.ensureInitialized();
   // 在线歌曲「先下载到缓存、再播本地」的播放前钩子在此装好。
   // 必须放 runBootstrap：各入口共用这一流程，冷启动也要生效。
-  OnlineDownloadService.instance.install();
+  // 精简版：在线播放拿到链接直接喂播放器，不先落缓存。
+  // 下载按钮仍走 OnlineDownloadService 的显式下载方法，不依赖此钩子。
+  // 若发现下载按钮失灵，把下面这一行原样放回来即可。
+  // OnlineDownloadService.instance.install();
   // 下载失败时把「为什么没存成」弹出来。
   // 服务层没有 BuildContext，所以用它递出的一句话 + 全局 navigatorKey 弹窗；
   // 项目里「词幕失败 / 歌曲无法播放」弹窗也是这个写法。
