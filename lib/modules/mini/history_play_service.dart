@@ -4,7 +4,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '../../data/models/song.dart';
 
 /// 播放历史：只存「歌曲标识 + 展示信息 + 时间」，不存播放链接。
-/// 酷狗播放链接带时效，存下来第二天点就是 404；点开时按 songId/hash 重新解析。
+/// 酷狗播放链接带时效，存下来第二天点就是 404；点开时按 songId / remoteSourceId 重新解析。
 class HistoryPlayEntry {
   final String id;
   final String title;
@@ -65,7 +65,7 @@ class HistoryPlayService {
         title: song.title,
         artist: song.artist,
         coverUrl: song.artworkUri,
-        hash: song.remoteSourceId,
+        remoteSourceId: song.remoteSourceId,
         playedAt: DateTime.now().millisecondsSinceEpoch,
       ),
     );
