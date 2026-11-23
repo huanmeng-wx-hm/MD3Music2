@@ -15,7 +15,7 @@ val keystoreProperties = Properties().apply {
 }
 
 android {
-    namespace = "com.md3music.md3music"
+    namespace = "com.huanmengwxhm.md3music2"
     compileSdk = 36
     ndkVersion = "28.2.13676358"
 
