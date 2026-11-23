@@ -1,3 +1,4 @@
+import '../mini/mini_history_section.dart';
 import 'dart:async';
 
 import '../../core/layout/adaptive_navigator.dart';
@@ -281,6 +282,8 @@ class _SearchPageState extends State<SearchPage>
         child: NestedScrollView(
           headerSliverBuilder: (context, innerBoxIsScrolled) {
             return [
+              // 精简版：最近播放（自动记录当前歌曲）
+              const SliverToBoxAdapter(child: MiniHistorySection()),
               SliverAppBar(
                 pinned: true,
                 // 壁纸由页面底层统一绘制,顶栏不再重复裁剪一份图片。
