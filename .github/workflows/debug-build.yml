@@ -36,9 +36,9 @@ jobs:
       matrix:
         include:
           - package: lite
-            application_id: com.md3music.md3music
+            application_id: com.huanmengwxhm.md3music2
           - package: apple-music
-            application_id: com.huanmengwxhm.md3music
+            application_id: com.huanmengwxhm.md3music2
 
 
     steps:
