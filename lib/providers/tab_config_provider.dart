@@ -57,10 +57,8 @@ class TabItem {
 /// 目前左对齐的是 discover / launchpad / favorites / user，加可选的 fm 与 settings；
 /// 本地音乐同样是固定导航入口；排行榜、搜索等标题居中的页面不标。
 const List<TabItem> kDefaultTabs = [
-  TabItem(id: 'discover', label: '发现', pinnedTitle: true),
-  TabItem(id: 'favorites', label: '收藏', pinnedTitle: true),
-  TabItem(id: 'launchpad', label: 'LaunchPad', pinnedTitle: true),
-  TabItem(id: 'library', label: '本地音乐', pinnedTitle: true),
+  // 精简版只保留两栏：左＝搜索/排行榜/历史播放，右＝账号/会员/设置。
+  TabItem(id: 'search', label: '搜索'),
   TabItem(id: 'user', label: '我的', isRemovable: false, pinnedTitle: true),
 ];
 
@@ -68,7 +66,6 @@ const List<TabItem> kDefaultTabs = [
 const List<TabItem> kOptionalTabs = [
   TabItem(id: 'fm', label: '私人FM', pinnedTitle: true), // 原默认（私人FM），现改为可选
   TabItem(id: 'coverflow', label: '封面流'),
-  TabItem(id: 'search', label: '搜索'),
   TabItem(id: 'charts', label: '排行榜'),
   TabItem(id: 'ip', label: '编辑精选'),
   TabItem(id: 'recognition', label: '听歌识曲'),
